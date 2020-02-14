@@ -9,38 +9,39 @@ def ler_num(msg):
 
         try:
 
-            num = int(input(msg)) or float(input(msg))
+            num = float(input(msg))
             return num
         except ValueError:
 
             print('ERRO! Digite um número inteiro ou flotoante.')
             continue
 
-print('Valores do ponto X.')
-x2 = ler_num('Digite X1: ')
-x1 = ler_num('Digite X2: ')
+
+#Recebendo os dados da Classe 'Ponto_1'  (X, Y)
+print(' --  VALORES DO PONTO 1 -- ')
+x1 = ler_num('Digite o valor de X1: ')
+y1 = ler_num('Digite o valor de Y1: ')
+
+#Recebendo os dados da Classe 'Ponto_2'  (Y1, Y2)
+print(' --  VALORES DO PONTO 2 -- ')
+x2 = ler_num('Digite o valor de X2: ')
+y2 = ler_num('Digite o valor de Y2: ')
 
 
-print('Valores do ponto P')
-#y1 = ler_num('Digite Y1: ')
-#y2 = ler_num('DIgite y2:')
+#Passando dados para as classes.
+ponto1 = Ponto_1(x1, y1)
+pontosX = ponto1.separando_pontos()
 
-
-
-ponto1 = Ponto_1(x1, x2)
-pontos = ponto1.separando_pontos()
-
-ponto2 = Pontos_p1_p2(2, 4)
+ponto2 = Pontos_2(x2, y2)
 pontosP = ponto2.separando_pontos()
 
 
 
 
-                 #y1 y2                   #p1 p2
-plt.plot((pontos[0], pontos[1]), (pontosP[0], pontosP[1]), 'bo-')
+#Passando os valores dos pontos para o plano cartesiano.
+plt.plot((y1, y2), (x1, x2), 'bo-')
 
-
-#Tamanho do plano cartesiano
+#Tamanho do plano cartesiano.
 plt.axis((0, 10, 1, 10))
 
 show()

@@ -35,7 +35,7 @@ class Ponto_1:
         return pontos
 
 
-class Pontos_p1_p2:
+class Pontos_2:
 
 
     def __init__(self, p1, p2):
