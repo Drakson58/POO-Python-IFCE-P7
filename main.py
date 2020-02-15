@@ -35,21 +35,17 @@ ponto2 = Pontos_2(x2, y2)
 pontosP = ponto2.separando_pontos()
 
 #Linhas que forma os quadrantes
-plt.hold('on')
-# Set x-axis range
-plt.xlim((0,10))
-# Set y-axis range
-plt.ylim((1,10))
-# Draw lines to split quadrants
-plt.plot([5,5],[1,9], linewidth=4, color='red' )
-plt.plot([1,9],[5,5], linewidth=4, color='red' )
 
+# Tamanho das linhas
+plt.plot([0, 0],[20, -20], linewidth=4, color='red' )
+plt.plot([20, -20],[0, 0], linewidth=4, color='red' )
+        # Reta horizontal
 
 #Passando os valores dos pontos para o plano cartesiano.
 plt.plot((y1, y2), (x1, x2), 'bo-')
 
 #Tamanho do plano cartesiano.
-plt.axis((0, 10, 1, 10))
+plt.axis((-20, 20, -20, 20))
 
 show()
 
