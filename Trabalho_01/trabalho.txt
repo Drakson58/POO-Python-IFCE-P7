@@ -1,0 +1,8 @@
+1 - Criar uma classe Ponto que recebe x e y no plano cartesiano
+
+2 - Chamar uma classe Reta P1 e P2
+
+3 - dado 1 ponto definir o quadrante
+
+- Pesquisar a rederização de uma reta e função quadratica
+
