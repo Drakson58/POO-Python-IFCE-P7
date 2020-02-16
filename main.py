@@ -7,6 +7,7 @@ print(' --  VALORES DO PONTO 1 -- ')
 x1 = ler_num('Digite o valor de X1: ')
 y1 = ler_num('Digite o valor de Y1: ')
 
+print()
 #Recebendo os dados da Classe 'Ponto_2'  (Y1, Y2)
 print(' --  VALORES DO PONTO 2 -- ')
 x2 = ler_num('Digite o valor de X2: ')
@@ -47,5 +48,17 @@ plt.plot((reta.retornar_p1X(), reta.retornar_p2X()), (reta.retornar_p1Y(), reta.
 #Tamanho do plano cartesiano.
 plt.axis((-20, 20, -20, 20))
 
+print()
+#Buscando quadrantes
+print('saber quadrante de qual ponto?')
+
+buscar_ponto = ler_pontos('(Escolha entre P1 ou P2) Ponto: ')
+if buscar_ponto == 'p1':
+    reta.quadrante_P1()
+elif buscar_ponto == 'p2':
+    reta.quadrante_P2()
+
+#Mostrando plano cartesiano.
 show()
+
 
