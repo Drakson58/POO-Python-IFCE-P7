@@ -1,4 +1,4 @@
-from itemNotaFiscal import * 
+from Classes.itemNotaFiscal import * 
 
 class NotaFiscalVenda(ItemNotaFiscal):
 
@@ -44,10 +44,7 @@ class NotaFiscalVenda(ItemNotaFiscal):
     def olaMundo(self):
         print('Ola, mundo!!!')
         
-notaFiscal = NotaFiscalVenda(2, '28/02/2000', 56.2)
 
-print(notaFiscal.toString())
-notaFiscal.olaMundo()
 
 
 

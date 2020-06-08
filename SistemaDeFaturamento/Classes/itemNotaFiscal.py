@@ -1,4 +1,4 @@
-from produto import *
+from Classes.produto import *
 
 class ItemNotaFiscal(Produto):
 
