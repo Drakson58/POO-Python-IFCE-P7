@@ -1,5 +1,5 @@
 
-class Cliente:
+class Cliente():
 
     def __init__(self, codigo, nome, cnpjcpf):
         self._codigo = codigo

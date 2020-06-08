@@ -1,10 +1,9 @@
+from produto import *
 
-class ItemNotaFiscal:
+class ItemNotaFiscal(Produto):
 
-    def __init__(self, numero, quantidade, valor):
-        self._numero = numero
-        self._quantidade = quantidade
-        self._valor = valor
+    def __init__(self):
+        Produto.__init__(self)
 
     def getNumero(self):
         return self._numero
@@ -27,5 +26,5 @@ class ItemNotaFiscal:
     def toString(self):
         return f'Numero:{self._numero} \nQuantidade:{self._quantidade} \nValor:{self._valor}' 
 
-itemNota = ItemNotaFiscal('0821', 5, 65.5)
-print(itemNota.toString())
+
+    

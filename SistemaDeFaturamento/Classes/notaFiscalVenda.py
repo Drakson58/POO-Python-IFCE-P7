@@ -1,7 +1,9 @@
+from itemNotaFiscal import * 
 
-class NotaFiscalVenda:
+class NotaFiscalVenda(ItemNotaFiscal):
 
     def __init__(self, codigo, data, valorNota):
+        ItemNotaFiscal.__init__(self)
         self._codigo = codigo
         self._data = data
         self._valorNota = valorNota
@@ -39,9 +41,13 @@ class NotaFiscalVenda:
         return f'Codigo:{self._codigo} \nData:{self._data} \nValor da nota:{self._valorNota}'
 
 
+    def olaMundo(self):
+        print('Ola, mundo!!!')
+        
 notaFiscal = NotaFiscalVenda(2, '28/02/2000', 56.2)
 
 print(notaFiscal.toString())
+notaFiscal.olaMundo()
 
 
 
