@@ -2,9 +2,9 @@ from Classes.bancoDeDados import *
 
 class Usuario(BancoDeDados):
 
-    def __init__(self, id_usuario = '', nome = '', senha = '', email = ''):
+    def __init__(self, nome = '', senha = '', email = ''):
         BancoDeDados.__init__(self)
-        self._id = id_usuario
+        self._id = id_usuario = ''
         self._nome = nome
         self._senha = senha
         self._email = email

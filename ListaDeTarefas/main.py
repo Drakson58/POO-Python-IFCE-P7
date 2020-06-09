@@ -15,7 +15,7 @@ while True:
         senha = str(input('Senha: '))
         email = str(input('Email: '))
         usuario = Usuario(nome, senha, email)
-        #print(usuario.getNome())
+        print(usuario.getNome())
         usuario.cadastrar()
     elif (opcao == 2):
         
