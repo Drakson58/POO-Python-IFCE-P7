@@ -2,16 +2,16 @@ from Classes.bancoDeDados import *
 
 class Usuario(BancoDeDados):
 
-    def __init__(self, nome = '', senha = '', email = ''):
+    def __init__(self, id_usuario = '', nome = '', senha = '', email = ''):
         BancoDeDados.__init__(self)
-        #self._id = id_usuario
+        self._id = id_usuario
         self._nome = nome
         self._senha = senha
         self._email = email
 
     
-    #def getId(self):
-       # return self._id
+    def getId(self):
+        return self._id
     def getNome(self):
         return self._nome
     def getSenha(self):
@@ -20,8 +20,8 @@ class Usuario(BancoDeDados):
         return self._email
 
     
-    #def setId(self, id_usuario):
-        #self._id = id_usuario
+    def setId(self, id_usuario):
+        self._id = id_usuario
     def setNome(self, nome):
         self._nome = nome
     def setSenha(self, senha):

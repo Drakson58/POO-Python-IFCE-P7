@@ -36,13 +36,12 @@ while True:
         for x in usuario.usuariosCadastrados():
             if(x[3] == email):
                 if(x[2] == senha):
-                    #print('Usuario autenticado.')
+                    usuario.setId(x[0])
+                    #print('Usuario autenticado.', usuario.getId())
                     opcao = opcoes.menuLogado()
-                    if (opcao == 9):
-                        print('Tem certeza que deseja apagar sua conta?')
-                        print('Y = Sim')
-                        print('N = Não')
-                        esc = str(input('Escolha: '))
+                    
+                    if (opcao == 9):         
+                        esc = opcoes.menuDeletarConta()
                         if(esc == 'Y' or esc == 'y'):
                             usuario.apagarUsuario(email)
                             print('\033[34m'+'Usuario apagado.'+'\033[0;0m')

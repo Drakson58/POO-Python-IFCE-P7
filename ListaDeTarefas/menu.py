@@ -3,7 +3,7 @@
 
 class Menu:
 
-  
+
     def menuInicial(self):
         print('\n\n*** GERENCIADOR DE TAREFAS ***')
         print('******************************')
@@ -30,3 +30,10 @@ class Menu:
         opcao = int(input('Opção: '))
         return opcao
 
+
+    def menuDeletarConta(self):
+        print('Tem certeza que deseja apagar sua conta?')
+        print('Y = Sim')
+        print('N = Não')
+        esc = str(input('Escolha: '))
+        return esc
