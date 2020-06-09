@@ -6,3 +6,11 @@ CREATE TABLE usuarios(
     senha varchar(32) not null
     email VARCHAR(120)
 );
+
+
+CREATE TABLE tarefas(
+	id_tarefa int not null PRIMARY KEY AUTO_INCREMENT,
+    id_usuario int not null,
+    tarefa varchar(60) not null,
+    descricao text
+);
