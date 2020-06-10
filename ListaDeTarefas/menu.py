@@ -37,3 +37,11 @@ class Menu:
         print('N = Não')
         esc = str(input('Escolha: '))
         return esc
+
+    
+    def menuDeletarTarefa(self):
+        print('Tem certeza que deseja apagar essa tarefa?')
+        print('Y = Sim')
+        print('N = Não')
+        esc = str(input('Escolha: '))
+        return esc

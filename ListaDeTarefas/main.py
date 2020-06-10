@@ -84,7 +84,24 @@ while True:
                         elif (opcao == 5):
                             print('\n*** APAGAR UMA TAREFA ***')
                             print('***************************')
+                            taf = str(input('Nome da tarefa: '))
                             
+                            tarefa = Tarefa()
+                            for tar in tarefa.listarTarefas():
+                                if(tar[2] == taf):
+                                    print()
+                                    print(f'Tarefa: {tar[2]}')
+                                    print(f'Descrição: {tar[3]}')
+                                    print(f'Inicio: {tar[4]}.')
+                                    print(f'Fim: {tar[5]}.\n')
+                                    
+                                    esc = opcoes.menuDeletarTarefa()             
+                                    if(esc == 'Y' or esc == 'y'):
+                                        tarefa.setTarefa(taf)
+                                        tarefa.apagarTarefa()
+                                        print('\033[34m'+'Tarefa excluida.'+'\033[0;0m')
+                                    else:
+                                        print('\033[31m'+'Operação cancelada!!'+'\033[0;0m')
                         elif (opcao == 0):
                             print('Uma pena você ter que ir. Espero sua volta em breve.')
                             break

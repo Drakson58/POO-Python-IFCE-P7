@@ -54,11 +54,15 @@ class Tarefa(BancoDeDados):
         query = "SELECT id_tarefa, id_usuario, tarefa, descricao, horario_inicio, horario_fim FROM tarefas WHERE 1"
         self._conn.execute(query)
         myresult = self._conn.fetchall()
-        return myresult
+        return myresult 
 
     
     def apagarTarefa(self):
-        print('Apagar tarefa')
+        self._conn = self.conectar()
+        # user.mostraConexao()
+        query = f"DELETE FROM tarefas WHERE tarefas.tarefa = '{self._tarefa}'"
+        self._conn.execute(query)
+        self.atualizarDB()
 
     
     def atualizarTarefa(self):
