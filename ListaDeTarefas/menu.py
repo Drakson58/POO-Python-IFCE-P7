@@ -3,7 +3,6 @@
 
 class Menu:
 
-
     def menuInicial(self):
         print('\n\n*** GERENCIADOR DE TAREFAS ***')
         print('******************************')
@@ -24,8 +23,7 @@ class Menu:
         print('1 - Criar uma tarefa.')
         print('2 - Listar todas as terefas.')
         print('3 - Pesquisar por uma tarefa.')
-        print('4 - Modificar uma tarefa.')
-        print('5 - Apagar uma tarefa.')
+        print('4 - Apagar uma tarefa.')
         print('9 - Apagar conta.')
         opcao = int(input('Opção: '))
         return opcao

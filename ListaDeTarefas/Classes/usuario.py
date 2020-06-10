@@ -60,6 +60,14 @@ class Usuario(BancoDeDados):
         pass
 
 
+    def mostrarUsuario(self):
+        self._conn = self.conectar()
+        # user.mostraConexao()
+        query = f"SELECT id_tarefa, id_usuario, tarefa, descricao, horario_inicio, horario_fim FROM tarefas WHERE tarefas.id_usuario = {self._id_usuario}"
+        self._conn.execute(query)
+        myresult = self._conn.fetchall()
+        return myresult
+
 #user = Usuario('Felipe', '1234')
 #user.cadastrar()
 #user.apagarUsuario('Felipe')

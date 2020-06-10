@@ -2,10 +2,13 @@
 from Classes.usuario import *
 from Classes.tarefa import *
 from menu import Menu
+import os
+
 
 while True:
     opcoes = Menu()
     opcao = opcoes.menuInicial()
+    os.system('cls') or None
 
     if (opcao == 1):
         
@@ -40,6 +43,7 @@ while True:
                     
                     while True:
                         opcao = opcoes.menuLogado()
+
                         if (opcao == 9):         
                             esc = opcoes.menuDeletarConta()
                             if(esc == 'Y' or esc == 'y'):
@@ -76,12 +80,18 @@ while True:
                         elif (opcao == 3):
                             print('\n*** PESQUISA DE TAREFA ***')
                             print('****************************')
-
-                        elif (opcao == 4):
-                            print('\n*** ATUALIZAR UMA TAREFA ***')
-                            print('******************************')
+                            taf = str(input('Nome da tarefa: '))
+                            
+                            tarefa = Tarefa()
+                            for tar in tarefa.listarTarefas():
+                                if(tar[2] == taf):
+                                    print()
+                                    print(f'Tarefa: {tar[2]}')
+                                    print(f'Descrição: {tar[3]}')
+                                    print(f'Inicio: {tar[4]}.')
+                                    print(f'Fim: {tar[5]}.\n')
                         
-                        elif (opcao == 5):
+                        elif (opcao == 4):
                             print('\n*** APAGAR UMA TAREFA ***')
                             print('***************************')
                             taf = str(input('Nome da tarefa: '))
@@ -110,6 +120,6 @@ while True:
                 continue
     elif (opcao == 0):
         
-        print('Uma pena você ter que ir. Espero sua volta em breve.')
+        print('Bye, bye...')
         break    
     
