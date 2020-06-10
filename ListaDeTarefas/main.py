@@ -1,7 +1,7 @@
 # coding=<utf-8>
 from Classes.usuario import *
 from Classes.tarefa import *
-from menu import Menu
+from Classes.menu import Menu
 import os
 
 
