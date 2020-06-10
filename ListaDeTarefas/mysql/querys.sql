@@ -12,5 +12,7 @@ CREATE TABLE tarefas(
 	id_tarefa int not null PRIMARY KEY AUTO_INCREMENT,
     id_usuario int not null,
     tarefa varchar(60) not null,
-    descricao text
+    descricao text,
+    horario_inicio varchar(20),
+    horario_fim varchar(20)
 );

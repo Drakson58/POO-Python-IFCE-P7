@@ -1,6 +1,6 @@
 # coding=<utf-8>
-
 from Classes.usuario import *
+from Classes.tarefa import *
 from menu import Menu
 
 while True:
@@ -15,7 +15,6 @@ while True:
         senha = str(input('Senha: '))
         email = str(input('Email: '))
         usuario = Usuario(nome, senha, email)
-        print(usuario.getNome())
         usuario.cadastrar()
     elif (opcao == 2):
         
@@ -36,17 +35,59 @@ while True:
         for x in usuario.usuariosCadastrados():
             if(x[3] == email):
                 if(x[2] == senha):
-                    usuario.setId(x[0])
-                    #print('Usuario autenticado.', usuario.getId())
-                    opcao = opcoes.menuLogado()
+                    usuario.setIdUsuario(x[0])        
+                    #print('Usuario autenticado.', usuario.getIdUsuario())
                     
-                    if (opcao == 9):         
-                        esc = opcoes.menuDeletarConta()
-                        if(esc == 'Y' or esc == 'y'):
-                            usuario.apagarUsuario(email)
-                            print('\033[34m'+'Usuario apagado.'+'\033[0;0m')
-                        else:
-                            print('\033[32m'+'Operação cancelada.'+'\033[0;0m')
+                    while True:
+                        opcao = opcoes.menuLogado()
+                        if (opcao == 9):         
+                            esc = opcoes.menuDeletarConta()
+                            if(esc == 'Y' or esc == 'y'):
+                                usuario.apagarUsuario(email)
+                                print('\033[34m'+'Usuario apagado.'+'\033[0;0m')
+                            else:
+                                print('\033[32m'+'Operação cancelada.'+'\033[0;0m')
+                        
+                        elif (opcao == 1):
+                            print('\n*** SALVAR TAREFA ***')
+                            print('***********************')
+                            tarefa = Tarefa()
+                            tarefa.setTarefa(str(input('Nome da tarefa:')))
+                            tarefa.setDescricao(str(input('Descrição:')))
+                            tarefa.setHorarioInicio(str(input('Horario de inicio: ')))
+                            tarefa.setHorarioFim(str(input('Horario de termino: ')))
+                            tarefa.setIdUsuario(usuario.getIdUsuario())
+                            tarefa.salvarTarefa()
+                            print('\033[34m'+'Tarefa salva com sucesso.'+'\033[0;0m')
+                    
+                        elif (opcao == 2):
+                            print('\n*** TAREFAS CRIADAS ***')
+                            print('*************************')
+                            
+                            tarefa = Tarefa()
+                            for tarefa in tarefa.listarTarefas():
+                                if(tarefa[1] == usuario.getIdUsuario()):
+                                    #print(tarefa)
+                                    print('Tarefa:', tarefa[2])
+                                    print(f'Descrição: {tarefa[3]}.')
+                                    print(f'Inicio: {tarefa[4]}.')
+                                    print(f'Fim: {tarefa[5]}.\n')
+                        
+                        elif (opcao == 3):
+                            print('\n*** PESQUISA DE TAREFA ***')
+                            print('****************************')
+
+                        elif (opcao == 4):
+                            print('\n*** ATUALIZAR UMA TAREFA ***')
+                            print('******************************')
+                        
+                        elif (opcao == 5):
+                            print('\n*** APAGAR UMA TAREFA ***')
+                            print('***************************')
+                            
+                        elif (opcao == 0):
+                            print('Uma pena você ter que ir. Espero sua volta em breve.')
+                            break
                 else:
                     print('\033[31m'+'Usuario invalido!!'+'\033[0;0m')    
                 continue

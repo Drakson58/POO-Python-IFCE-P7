@@ -20,7 +20,7 @@ class Menu:
         print('\n\n*** BEM VINDO ***')
         print('*****************')
         print('Esolha uma das opções: ')
-        print('0 - Voltar.')
+        print('0 - Sair.')
         print('1 - Criar uma tarefa.')
         print('2 - Listar todas as terefas.')
         print('3 - Pesquisar por uma tarefa.')
